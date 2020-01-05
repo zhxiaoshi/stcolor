@@ -10,7 +10,7 @@ prog def mycolor
 		if !ustrregexm(v[`i'], "[\u4e00-\u9fa5]+") {
 			file open myfile using "color-谷歌`=v1[`i']'.style", write replace
 		}
-		fw `"set rgb "`=rgb[`i']'""'
-		fw, e
+		file write myfile `"set rgb "`=rgb[`i']'""'
+		file close myfile
 	}
 end 
